@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Breaking news</title>
 </head>
@@ -13,25 +14,52 @@
 <body>
     <div id="root"></div>
     <nav>
-        <h1>Breaking news</h1>
-        <input id="searchByKeyword" onclick="search()" type="text"
-            placeholder="Search for topics"><button>Search</button>
 
-        <input id="searchBySource" type="text" placeholder="Search by Source">
+
+        <!-- <input id="searchBySource" type="text" placeholder="Search by Source">
         <button onclick="searchBySource()">Search by
-            Source</button>
+            Source</button> -->
 
-        <div id="categoryButton">
-            Category Button
-        </div>
-
-
+        <!-- 
+            <input id="searchByKeyword" onclick="search()" type="text"
+            placeholder="Search for topics"><button>Search</button> -->
 
     </nav>
 
-    <div id="newsListArea" class="container"></div>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="navbar-brand">
+            <h1>Breaking news</h1>
+        </a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" id="searchByKeyword" onclick="search()" type="search"
+                placeholder="Search for topics" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0 mr-5" type="submit"><i class="fas fa-search"></i></button>
 
-    <button onclick="loadMore()">Load More</button>
+            <input class="form-control mr-sm-2" id="searchByKeyword" onclick="search()" type="search"
+                placeholder="Search by Source" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div id="categoryButton">
+                    Category 
+                </div>
+
+            </div>
+            <div class="col-8">
+                <div id="newsListArea"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <button onclick="loadMore()">Load More</button>
+    </footer>
+
     <script src="https://momentjs.com/downloads/moment.js"></script>
 
     <script src="js/app.js"></script>

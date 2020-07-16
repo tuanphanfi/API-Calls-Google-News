@@ -94,16 +94,16 @@ function render(list) {
     let newsHTML = list.map((item, index) => {
         let publishedAt = moment(item['publishedAt']).fromNow()
         return `
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width:     58rem;">
             <img class="card-img-top" src="${item.urlToImage}" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title"><a href="${item.url}">${item.title}<a/></h5>
                 <p class="card-text">${item.content}</p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Published at: ${publishedAt}</li>
-                <li class="list-group-item">Source: ${item.source.name}</li>
-                <li class="list-group-item">Author: ${item.author}</li>
+                <li class="list-group-item"><strong>Published at: </strong>${publishedAt}</li>
+                <li class="list-group-item"><strong>Source: </strong>${item.source.name}</li>
+                <li class="list-group-item"><strong>Author:</strong> ${item.author}</li>
             </ul>
             <div class="card-body">
                 <a href="${item.url}" class="card-link">Read more</a>
